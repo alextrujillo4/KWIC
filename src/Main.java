@@ -16,12 +16,13 @@ public class Main {
                 .addFilter(new ShiftFilter())
                 .addFilter(new SortFilter());
 
-        List<String> input =
-                Arrays.asList("Clouds are white", "Pittsburgh is beautiful");
-        System.out.println(pipeline.run(input));
+        //List<String> input = Arrays.asList("Clouds are white", "Pittsburgh is beautiful");
+        //System.out.println(pipeline.run(input));
 
+        LineCounter lineCounter = new LineCounter();
+        lineCounter.readFile();
+        lineCounter.printArray();
 
-        LineCounter.readFile();
 
     }
 }

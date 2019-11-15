@@ -1,19 +1,29 @@
 package inputs;
 
 import java.io.*;
-import java.net.URL;
-import java.nio.file.Paths;
+import java.util.ArrayList;
 
 public class LineCounter {
-    public static ArrayList <String> readFile() throws FileNotFoundException, IOException{
+    private ArrayList <String> filearray;
 
+    public LineCounter() {
+        filearray  = new ArrayList<String>() ;
+    }
+
+    public  void readFile() throws FileNotFoundException, IOException{
         File file =  new File(LineCounter.class.getResource("KWIC2_input.txt").getFile());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
-        ArrayList <String> file = new ArrayList<String>() ;
         while ((st = br.readLine()) != null)
-            file.add(st);
-        return file;
+            filearray.add(st);
+
+    }
+
+    public void printArray() {
+        System.out.println(filearray.size());
+        for (String aFilearray : filearray) {
+            System.out.println(aFilearray);
+        }
     }
 
 
